@@ -24834,25 +24834,20 @@
 	var Nav = __webpack_require__(223);
 
 	var Main = function Main(props) {
-	   return React.createElement(
+	  return React.createElement(
+	    'div',
+	    null,
+	    React.createElement(Nav, null),
+	    React.createElement(
 	      'div',
-	      null,
-	      React.createElement(Nav, null),
+	      { className: 'row' },
 	      React.createElement(
-	         'div',
-	         { className: 'row' },
-	         React.createElement(
-	            'div',
-	            { className: 'columns medium-6 large-4 small-centered' },
-	            React.createElement(
-	               'h2',
-	               null,
-	               'Main component'
-	            ),
-	            props.children
-	         )
+	        'div',
+	        { className: 'columns medium-6 large-4 small-centered' },
+	        props.children
 	      )
-	   );
+	    )
+	  );
 	};
 
 	module.exports = Main;
@@ -26602,15 +26597,53 @@
 /* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	var React = __webpack_require__(8);
 
 	var About = function About(props) {
 		return React.createElement(
-			'h3',
+			"div",
 			null,
-			'About Component.'
+			React.createElement(
+				"h1",
+				{ className: "text-center" },
+				"About"
+			),
+			React.createElement(
+				"p",
+				null,
+				"this is a weather application build on React. I have built this for the Complete React Web App Developer Course."
+			),
+			React.createElement(
+				"p",
+				null,
+				"Here are some of the tools I used:"
+			),
+			React.createElement(
+				"ul",
+				null,
+				React.createElement(
+					"li",
+					null,
+					React.createElement(
+						"a",
+						{ href: "https://facebook.github.io/react" },
+						"React"
+					),
+					" - This is was the Javascript framework used."
+				),
+				React.createElement(
+					"li",
+					null,
+					React.createElement(
+						"a",
+						{ href: "https://openweathermap.org" },
+						"Open Weather Map"
+					),
+					" - this is Using to get the weather of any city."
+				)
+			)
 		);
 	};
 

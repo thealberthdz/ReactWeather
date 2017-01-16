@@ -6,9 +6,9 @@ const PORT = process.env.PORT || 3000;
 
 app.use(function(req, res, next){
 	if(req.headers['x-forwarded-proto'] === 'http') {
-		next();
+		res.redirect('http://' + res.hostname + req.url);
 	}else {
-		res.redirect('https//' + res.hostname + req.url);
+		next();
 	}
 });
 
@@ -17,3 +17,4 @@ app.use(express.static('public'));
 app.listen(PORT, function () {
   console.log('Express server is up on port ' + PORT);
 });
+
